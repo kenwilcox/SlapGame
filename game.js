@@ -1,4 +1,4 @@
-var male = true;
+var isMale = true;
 var name = "John Jacob Jingleheimer Schmidt";
 var maxHealth = 100;
 var health = maxHealth;
@@ -6,14 +6,14 @@ var hits = 0;
 
 function changeGender() {
   var node = document.getElementById("character");
-  if (male) {
+  if (isMale) {
     node.classList.remove("fa-male");
     node.classList.add("fa-female");
   } else {
     node.classList.remove("fa-female");
     node.classList.add("fa-male");    
   }
-  male = !male;
+  isMale = !isMale;
 }
 
 function slap() {
@@ -57,14 +57,14 @@ function update() {
   hitNode.innerText = hits.toString();
   
   if (health <= 0) {
-    var gender = male? "his": "her";
+    var gender = isMale? "his": "her";
     alert(`You kicked ${gender} butt!`);
     reset();
   }
 }
 
 function reset() {
-  male = true;
+  isMale = true;
   name = "John Jacob Jingleheimer Schmidt";
   maxHealth = 100;
   health = maxHealth;
